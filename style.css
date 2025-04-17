@@ -523,7 +523,7 @@ html {
   background: #CAC426;
 }
 
-/* mobile adjusts */
+/* mobile adjusts drag drop */
 @media (max-width: 768px) {
   .drag-drop-container {
     width: 100%;
@@ -545,4 +545,60 @@ html {
     min-width: auto;
     padding: 10px;
   }
+}
+
+/* History */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal img {
+  max-height: 80vh;
+  width: auto;
+  object-fit: contain;
+  position: relative;
+  z-index: 101;
+}
+
+#modal-close {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 35px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 102;
+}
+
+#modal-caption {
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 101;
 }
