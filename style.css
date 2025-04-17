@@ -389,3 +389,45 @@ html {
   display: block;
   object-fit: cover;
 }
+
+/* text on images */
+.carousel-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 15px;
+  background: black;
+  color: #FFFEEC;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #CAC426;
+  border: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  padding: 1px 3px;
+  cursor: pointer;
+  z-index: 50;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#prev-btn {
+  left: 10px;
+}
+
+#next-btn {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  color: #FFFEEC;
+}
