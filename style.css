@@ -639,4 +639,13 @@ html {
   margin: 5px;
 }
 
+  /* Case study mobile  */
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .content p {
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+
 }
