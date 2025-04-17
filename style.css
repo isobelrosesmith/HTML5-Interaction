@@ -603,9 +603,9 @@ html {
   z-index: 101;
 }
 
-/* mobile fix */
+/* mobile fixes */
 @media (max-width: 768px) {
-  /* Hero */
+  /* Hero mobile */
   .hero h1 {
     font-size: 3rem;
     margin-top: 30px;
@@ -618,5 +618,25 @@ html {
     font-size: 1.3rem;
     margin-top: 10px;
   }
+
+  /* Navigation mobile */
+#fixed-nav {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  background: #222223;
+  padding: 10px 0;
+  z-index: 200;
+  border-radius: 0;
+  flex-wrap: wrap;
+}
+
+#fixed-nav a {
+  font-size: 1.2rem;
+  margin: 5px;
+}
 
 }
