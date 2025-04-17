@@ -269,11 +269,11 @@ document.addEventListener('DOMContentLoaded', () => {
     carouselIndex = (carouselIndex - 1 + carouselImages.length) % carouselImages.length;
     updateCarousel();
   });
-// change image every 8 secs
+// change image every 10 secs
   setInterval(() => {
     carouselIndex = (carouselIndex + 1) % carouselImages.length;
     updateCarousel();
-  }, 8000);
+  }, 10000);
 
 
     // Drag and drop function
