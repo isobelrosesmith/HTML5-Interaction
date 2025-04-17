@@ -345,3 +345,20 @@ html {
 #next-question:hover, #try-again:hover {
   background: #CAC426;
 }
+
+
+/* Carousel section  */
+.carousel-section {
+  padding: 40px 20px;
+  text-align: center;
+  background: #A59132;
+  margin-bottom: 40px;
+}
+
+.carousel-section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 7rem;
+  text-transform: uppercase;
+  color: #FFFEEC;
+  margin-bottom: 20px;
+}
