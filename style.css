@@ -15,3 +15,28 @@ html {
     overflow-x: hidden;
     background: transparent;
   }
+
+  /* navigation bar */
+#nav {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #222223;
+    padding: 10px 15px;
+    border-radius: 5px;
+    z-index: 200;
+  }
+  
+  #nav a {
+    color: #CAC426;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+    margin-right: 15px;
+    display: inline-block;
+    transition: color 0.3s ease;
+  }
+  
+  #nav a:hover {
+    color: #aaa;
+  }
