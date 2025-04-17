@@ -648,4 +648,21 @@ html {
     margin-top: 0;
   }
 
+    /* Timeline mobile*/
+    .timeline-section h2 {
+      font-size: 3.5rem;
+    }
+    .timeline-section h3 {
+      font-size: 1.8rem;
+    }
+    .timeline-item::before {
+      font-size: 1.2rem;
+      top: -40px;
+    }
+  
+    .timeline-tooltip {
+      font-size: 1rem;
+      padding: 8px 12px;
+    }
+
 }
