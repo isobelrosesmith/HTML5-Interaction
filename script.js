@@ -31,4 +31,57 @@ document.addEventListener('DOMContentLoaded', () => {
       hero.style.pointerEvents = 'auto';
     }
   });
+
+ //  case study section
+ const modal = document.getElementById('modal');
+ const modalContent = document.getElementById('modal-content');
+ const modalCaption = document.getElementById('modal-caption');
+ const modalClose = document.getElementById('modal-close');
+ const imageBoxes = document.querySelectorAll('.image-box');
+
+ imageBoxes.forEach(box => {
+   const img = box.querySelector('img');
+   let hoverTimer;
+
+   // Desktop hover 
+   box.addEventListener('mouseenter', () => {
+     if (!isTouchDevice()) {
+       hoverTimer = setTimeout(() => {
+         showModal(img);
+       }, 900); // delay before opening larger image
+     }
+   });
+
+   // Cancel timer if mouse leaves before delay
+   box.addEventListener('mouseleave', () => {
+     if (!isTouchDevice()) {
+       clearTimeout(hoverTimer);
+     }
+   });
+
+   // Click for desktop and mobile, immediatley show
+   box.addEventListener('click', () => {
+     showModal(img);
+   });
+ });
+
+ // hide when clicked 
+ modalClose.addEventListener('click', () => {
+   modal.style.display = 'none';
+ });
+
+ function showModal(img) {
+   const fullSrc = img.getAttribute('data-full');
+   const caption = img.getAttribute('data-caption');
+   if (fullSrc) {
+     modalContent.src = fullSrc;
+     modalCaption.textContent = caption || '';
+     modal.style.display = 'flex';
+   }
+ }
+
+ function isTouchDevice() {
+   return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+ }
+
 });
