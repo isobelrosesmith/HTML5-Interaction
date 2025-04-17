@@ -602,3 +602,21 @@ html {
   box-sizing: border-box;
   z-index: 101;
 }
+
+/* mobile fix */
+@media (max-width: 768px) {
+  /* Hero */
+  .hero h1 {
+    font-size: 3rem;
+    margin-top: 30px;
+  }
+  .hero .sub-title{
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  .hero .sub-title-2{
+    font-size: 1.3rem;
+    margin-top: 10px;
+  }
+
+}
