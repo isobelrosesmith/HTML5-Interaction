@@ -179,3 +179,65 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     }
   ];
+
+  let currentQuestionIndex = 0;
+  const quizContainer = document.getElementById('quiz-container');
+  const quizFeedback = document.getElementById('quiz-feedback');
+  const nextQuestionBtn = document.getElementById('next-question');
+  
+  // load and display question
+  function loadQuestion() {
+    // Clear before question
+    quizContainer.innerHTML = "";
+    quizFeedback.textContent = "";
+    
+    if (currentQuestionIndex >= quizData.length) {
+      // Display 'complete' text
+      quizContainer.innerHTML = "<p>Quiz Complete! Thanks for playing.</p>";
+      nextQuestionBtn.style.display = "none"; // hide next question button
+      
+      // try again button
+      const tryAgainBtn = document.createElement("button");
+      tryAgainBtn.textContent = "Try Again";
+      tryAgainBtn.id = "try-again";
+      // when clicked restart quiz
+      tryAgainBtn.addEventListener("click", () => {
+        currentQuestionIndex = 0;
+        nextQuestionBtn.style.display = "inline-block";
+        loadQuestion();
+      });
+      quizContainer.appendChild(tryAgainBtn);
+      
+      return;
+    }
+    
+    const currentQuestion = quizData[currentQuestionIndex];
+    const questionEl = document.createElement('p');
+    questionEl.textContent = currentQuestion.question;
+    quizContainer.appendChild(questionEl);
+    
+    currentQuestion.answers.forEach(answer => {
+      const answerBtn = document.createElement('span');
+      answerBtn.textContent = answer.text;
+      answerBtn.classList.add('answer');
+      // click function to show feedback on right or wrong
+      answerBtn.addEventListener('click', () => {
+        if (answer.correct) {
+          quizFeedback.textContent = "Correct!";
+          quizFeedback.style.color = "green";
+        } else {
+          quizFeedback.textContent = "Incorrect!";
+          quizFeedback.style.color = "red";
+        }
+      });
+      quizContainer.appendChild(answerBtn);
+    });
+  }
+  // go to next question when clicked
+  nextQuestionBtn.addEventListener('click', () => {
+    currentQuestionIndex++;
+    loadQuestion();
+  });
+  
+  // load first question
+  loadQuestion();
