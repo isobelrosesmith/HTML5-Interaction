@@ -331,3 +331,67 @@ document.addEventListener('DOMContentLoaded', () => {
     restartButton.addEventListener('click', () => {
       location.reload();
     });
+
+
+  // Timeline tooltip 
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  let tooltip; // manage one at a time
+  
+  timelineItems.forEach(item => {
+    const info = item.getAttribute('data-info');
+  
+    // Desktop hover
+    item.addEventListener('mouseenter', () => {
+      if (!isTouchDevice()) {
+        showTooltip(item, info); // show ion hover
+      }
+    });
+  
+    item.addEventListener('mouseleave', () => {
+      if (!isTouchDevice() && tooltip) {
+        tooltip.remove(); //unshow when mouse leaves
+        tooltip = null;
+      }
+    });
+  
+    // Mobile click
+    item.addEventListener('click', () => {
+      if (isTouchDevice()) {
+        if (tooltip) {
+          tooltip.remove();
+          tooltip = null;
+        } else {
+          showTooltip(item, info);
+          setTimeout(() => {
+            if (tooltip) {
+              tooltip.remove();
+              tooltip = null;
+            }
+          }, 3000); // hide after 3 seconds
+        }
+      }
+    });
+  });
+  
+  // Helper functions
+  function showTooltip(item, info) {
+    tooltip = document.createElement('div');
+    tooltip.className = 'timeline-tooltip';
+    tooltip.textContent = info;
+    document.body.appendChild(tooltip);
+  
+    const rect = item.getBoundingClientRect();
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    const top = rect.bottom + scrollY + 10;
+    const left = rect.left + rect.width / 2;
+  
+    tooltip.style.top = `${top}px`;
+    tooltip.style.left = `${left}px`;
+  }
+  
+  // detect touch devices 
+  function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  }
+  
+  
