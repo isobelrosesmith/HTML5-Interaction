@@ -40,3 +40,60 @@ html {
   #nav a:hover {
     color: #aaa;
   }
+
+  /* hero section */
+.hero {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #222223;
+    color: #CAC426;
+    z-index: 10;
+    text-align: center;
+    transition: opacity 0.5s ease;
+    scroll-margin-top: 20000px;
+  }
+  
+  #hero-title .letter {
+    opacity: 0;
+    transform: translateY(20px);
+    display: inline-block;
+    animation: fadeInUp 0.5s forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18rem;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+  }
+  
+  
+  .hero .sub-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.3rem;
+    color: #FFFEEC;
+    text-align: center;
+    margin-top: -80px;
+    letter-spacing: 2px;
+  }
+  
+  .hero .sub-title-2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.6rem;
+    color: #CAC426;
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 2px;
+  }
