@@ -431,3 +431,22 @@ html {
   background: rgba(0, 0, 0, 0.8);
   color: #FFFEEC;
 }
+
+/* Drag and drop section */
+.drag-drop-section {
+  padding: 60px 20px;
+  background: #222223;
+  color: #FFFEEC;
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.drag-drop-section h2 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.drag-drop-section p {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
