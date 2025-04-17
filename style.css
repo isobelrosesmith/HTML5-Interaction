@@ -620,7 +620,7 @@ html {
   }
 
   /* Navigation mobile */
-#fixed-nav {
+#nav {
   top: 0;
   left: 0;
   right: 0;
@@ -634,7 +634,7 @@ html {
   flex-wrap: wrap;
 }
 
-#fixed-nav a {
+#nav a {
   font-size: 1.2rem;
   margin: 5px;
 }
