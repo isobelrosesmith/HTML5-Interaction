@@ -86,3 +86,96 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+  // Quiz Section
+  const quizData = [
+    {
+      question: "When was the camera obscura first discovered?",
+      answers: [
+        { text: "At least 400 BC", correct: true },
+        { text: "200 BC", correct: false },
+        { text: "100 AD", correct: false },
+        { text: "50 AD", correct: false }
+      ]
+    },
+    {
+      question: "Who created the first in-camera photograph between 1822 and 1827?",
+      answers: [
+        { text: "Louis Daguerre", correct: false },
+        { text: "Joseph Nicéphore Niépce", correct: true },
+        { text: "William Henry Fox Talbot", correct: false },
+        { text: "George Eastman", correct: false }
+      ]
+    },
+    {
+      question: "Which process did William Henry Fox Talbot develop in 1833?",
+      answers: [
+        { text: "Daguerreotype", correct: false },
+        { text: "Cyanotype", correct: false },
+        { text: "Photogenic drawing", correct: true },
+        { text: "Wet Plate Collodion", correct: false }
+      ]
+    },
+    {
+      question: "Which process was introduced by Louis Daguerre in 1839?",
+      answers: [
+        { text: "Cyanotype", correct: false },
+        { text: "Digital Photography", correct: false },
+        { text: "Autochrome", correct: false },
+        { text: "Daguerreotype", correct: true },
+      ]
+    },
+    {
+      question: "Which photographic process, introduced by Sir John Herschel in 1842, produced vivid blue images?",
+      answers: [
+        { text: "Cyanotype", correct: true },
+        { text: "Daguerreotype", correct: false },
+        { text: "Photogenic drawing", correct: false },
+        { text: "Dry Plate Process", correct: false }
+      ]
+    },
+    {
+      question: "Which process did Frederick Scott Archer develop in 1851?",
+      answers: [
+        { text: "Dry Plate Process", correct: false },
+        { text: "Autochrome", correct: false },
+        { text: "Wet Plate Collodion Process", correct: true },
+        { text: "Digital Photography", correct: false }
+      ]
+    },
+    {
+      question: "Who introduced the gelatin dry plate process in 1871?",
+      answers: [
+        { text: "Richard Leach Maddox", correct: true },
+        { text: "Joseph Nicéphore Niépce", correct: false },
+        { text: "Louis Daguerre", correct: false },
+        { text: "George Eastman", correct: false }
+      ]
+    },
+    {
+      question: "Which company released the first camera that used roll film in 1888?",
+      answers: [
+        { text: "Nikon", correct: false },
+        { text: "Kodak", correct: true },
+        { text: "Canon", correct: false },
+        { text: "Fujifilm", correct: false }
+      ]
+    },
+    {
+      question: "Which photographic process, introduced by the Lumière brothers in 1907, was the first commercially successful colour method?",
+      answers: [
+        { text: "Autochrome", correct: true },
+        { text: "Cyanotype", correct: false },
+        { text: "Digital Photography", correct: false },
+        { text: "Wet Plate Collodion", correct: false }
+      ]
+    },
+    {
+      question: "In 1975, which engineer developed the first working prototype of a digital camera?",
+      answers: [
+        { text: "Richard Leach Maddox", correct: false },
+        { text: "Joseph Niépce", correct: false },
+        { text: "Louis Daguerre", correct: false },
+        { text: "Steven Sasson", correct: true },
+      ]
+    }
+  ];
