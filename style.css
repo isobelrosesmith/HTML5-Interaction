@@ -684,4 +684,41 @@ html {
       font-size: 1.4rem;
     }
 
-}
+    @media (max-width: 768px) {
+      .modal {
+        align-items: flex-start;
+        padding: 20px 10px;
+      }
+    
+      .modal img {
+        width: 100%;
+        max-width: 90vw;
+        max-height: 60vh;
+        object-fit: contain;
+        margin: 60px auto 10px;
+        display: block;
+      }
+    
+      #modal-caption {
+        font-size: 1.2rem;
+        padding: 10px;
+        line-height: 1.4;
+        background: rgba(0, 0, 0, 0.6);
+      }
+    
+      #modal-close {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        display: block;
+        margin: 10px auto 0;
+        font-size: 1.4rem;
+        background: rgba(255,255,255,0.1);
+        border: none;
+        border-radius: 5px;
+        color: white;
+        padding: 5px 15px;
+      }
+    }
+  }  
