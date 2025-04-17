@@ -665,4 +665,12 @@ html {
       padding: 8px 12px;
     }
 
+      /* Quiz mobile*/
+  .quiz-section h2 {
+    font-size: 4rem;
+  }
+  .answer {
+    font-size: 1.8rem;
+  }
+
 }
