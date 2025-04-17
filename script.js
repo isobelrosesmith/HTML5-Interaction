@@ -15,4 +15,20 @@ document.addEventListener('DOMContentLoaded', () => {
         heroTitle.appendChild(span);
       }
     }
+  // Hero scroll fade effect 
+  const hero = document.querySelector('.hero');
+  if (!hero) {
+    console.warn('Hero element not found.');
+    return;
+  }
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    if (scrollY > 50) {
+      hero.style.opacity = 0;
+      hero.style.pointerEvents = 'none';
+    } else {
+      hero.style.opacity = 1;
+      hero.style.pointerEvents = 'auto';
+    }
+  });
 });
