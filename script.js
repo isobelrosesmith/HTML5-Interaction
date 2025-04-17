@@ -274,3 +274,60 @@ document.addEventListener('DOMContentLoaded', () => {
     carouselIndex = (carouselIndex + 1) % carouselImages.length;
     updateCarousel();
   }, 8000);
+
+
+    // Drag and drop function
+    // select all draggabel and drop zones
+    const draggables = document.querySelectorAll('.draggable');
+    const dropzones = document.querySelectorAll('.dropzone');
+    const matchFeedback = document.getElementById('match-feedback');
+    const restartButton = document.getElementById('restart-drag-drop');
+  
+    draggables.forEach(draggable => {
+      draggable.addEventListener('dragstart', (e) => {
+        e.dataTransfer.setData('text/plain', draggable.dataset.year);
+      });
+    });
+  
+    dropzones.forEach(dropzone => {
+       // allow item to be dragged over
+      dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropzone.style.background = '#666'; // feedback on hover
+      });
+  // reset background when drag leaves drop
+      dropzone.addEventListener('dragleave', () => {
+        dropzone.style.background = '';
+      });
+  
+      dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const draggedYear = e.dataTransfer.getData('text/plain');
+        const correctYear = dropzone.dataset.answer;
+  
+        if (!dropzone.classList.contains('correct')) {
+          if (draggedYear === correctYear) {
+            //correct
+            dropzone.textContent = `${dropzone.dataset.title} (${correctYear}) ✅`;
+            dropzone.classList.add('correct');
+            dropzone.classList.remove('incorrect');
+          } else {
+            //incrorrect
+            dropzone.textContent = `${dropzone.dataset.title} ❌`;
+            dropzone.classList.add('incorrect');
+            dropzone.classList.remove('correct');
+          }
+          dropzone.style.background = '';
+        }
+  
+        const allCorrect = Array.from(dropzones).every(dz => dz.classList.contains('correct'));
+        if (allCorrect) {
+          matchFeedback.textContent = 'All answers matched correctly!';
+          restartButton.style.display = 'inline-block'; // restart button
+        }
+      });
+    });
+  // activity restarted after reload
+    restartButton.addEventListener('click', () => {
+      location.reload();
+    });

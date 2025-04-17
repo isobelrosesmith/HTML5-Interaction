@@ -450,3 +450,75 @@ html {
   font-size: 1.8rem;
   margin-bottom: 30px;
 }
+
+.drag-drop-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.drag-drop-pair {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.draggable {
+  background: #CAC426;
+  color: #222223;
+  padding: 10px 20px;
+  font-size: 2rem;
+  border-radius: 5px;
+  cursor: grab;
+  transition: background 0.3s ease;
+}
+
+.draggable:active {
+  cursor: grabbing;
+}
+
+.dropzone {
+  background: #444;
+  padding: 15px 25px;
+  border: 2px dashed #CAC426;
+  min-width: 200px;
+  font-size: 1.8rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.dropzone.correct {
+  background: green;
+  color: white;
+}
+
+.dropzone.incorrect {
+  background: red;
+  color: white;
+}
+
+#match-feedback {
+  margin-top: 30px;
+  font-size: 2rem;
+}
+
+#restart-drag-drop {
+  background: #FFFEEC;
+  color: #222223;
+  padding: 10px 20px;
+  font-size: 2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+#restart-drag-drop:hover {
+  background: #CAC426;
+}
