@@ -673,4 +673,15 @@ html {
     font-size: 1.8rem;
   }
 
+    /* Carousel mobile */
+    .carousel-container {
+      max-width: 90%;
+    }
+    .carousel-section h2 {
+      font-size: 3rem;
+    }
+    .carousel-overlay {
+      font-size: 1.4rem;
+    }
+
 }
