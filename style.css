@@ -522,3 +522,27 @@ html {
 #restart-drag-drop:hover {
   background: #CAC426;
 }
+
+/* mobile adjusts */
+@media (max-width: 768px) {
+  .drag-drop-container {
+    width: 100%;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .drag-drop-pair {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .draggable, .dropzone {
+    flex: 1;
+    font-size: 1.4rem;
+    min-width: auto;
+    padding: 10px;
+  }
+}
