@@ -98,3 +98,60 @@ html {
     letter-spacing: 2px;
   }
 
+/* case study */
+.content {
+    padding: 20px;
+    background: transparent;
+    min-height: auto;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0;
+  }
+  
+  .content p {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: #FFFEEC;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+  }
+  
+  .image-box {
+    background: #ccc;
+    width: 100%;
+    border: 2px solid #CAC426;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 2 / 3;
+  }
+  
+  .image-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, border-color 0.3s ease;
+    object-position: 50% 30%;
+  }
+  
+  .image-box img.sasson {
+    object-position: 80% 30%;
+  }
+  
+  .image-box img.daguerre {
+    object-position: -1% 30%;
+  }
+  
+  .image-box:hover img {
+    transform: scale(1.05);
+    border-color: #FFFEEC;
+  }
+  
