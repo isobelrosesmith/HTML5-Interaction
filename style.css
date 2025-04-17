@@ -259,3 +259,25 @@ html {
   }
   
   
+/* mobile */
+@media (max-width: 768px) {
+    .scroll-hint {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      color: #FFFEEC;
+      margin-top: -20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .timeline-container {
+      gap: 40px; /* smaller space between  */
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+  
+  
