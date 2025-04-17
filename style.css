@@ -155,3 +155,107 @@ html {
     border-color: #FFFEEC;
   }
   
+  /* Timeline section  */
+.timeline-section {
+    margin-top: 20px;
+    background: #A59132;
+    color: #FFFEEC;
+    padding: 20px 0 60px;
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    overflow: visible;
+  }
+  
+  .timeline-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 10rem;
+    margin-bottom: 40px;
+  }
+  
+  .timeline-section h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 40px;
+  }
+  
+  .timeline-wrapper {
+    overflow: visible;
+    width: 100%;
+    position: relative;
+  }
+  
+  .timeline-container {
+    display: flex;
+    gap: 80px;
+    padding: 60px 40px;
+    padding-left: 60px; 
+    padding-right: 60px; 
+    overflow-x: auto;
+    overflow-y: visible;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .timeline-spacer {
+    flex: 0 0 70px; /* space on ends of timeline */
+  }
+  
+  
+  /* Hide hint */
+  .scroll-hint {
+    display: none;
+  }
+  
+  
+  .timeline-item {
+    flex: 0 0 auto;
+    width: 40px;
+    height: 30px;
+    background-color:black;
+    border-radius: 50%;
+    position: relative;
+    scroll-snap-align: center;
+    cursor: pointer;
+    margin-bottom: 50px;
+  }
+  
+  .timeline-item::before {
+    content: attr(data-year);
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: black;
+    font-family: 'Bebas Neue', sans-serif;
+    white-space: nowrap;
+    z-index: 2;
+  }
+  
+  .timeline-tooltip {
+    position: absolute;
+    background-color: rgba(255, 254, 236, 0.95);
+    color: #222;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-family: Arial, sans-serif;
+    white-space: nowrap;
+    z-index: 9999;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    pointer-events: none;
+    transform: translateX(-50%);
+  }
+  
+  
