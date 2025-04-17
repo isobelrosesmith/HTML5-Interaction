@@ -241,3 +241,36 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // load first question
   loadQuestion();
+
+
+
+  // image Carousel function
+  
+  // call container and images
+  const carousel = document.querySelector('.carousel');
+  const carouselImages = document.querySelectorAll('.carousel img');
+  // previuos and next buttons
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  // track visible image
+  let carouselIndex = 0;
+// update carousel based on index image
+  function updateCarousel() {
+    const imageWidth = carouselImages[0].clientWidth;
+    carousel.style.transform = `translateX(-${carouselIndex * imageWidth}px)`;
+  }
+// next button
+  nextBtn.addEventListener('click', () => {
+    carouselIndex = (carouselIndex + 1) % carouselImages.length;
+    updateCarousel();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    carouselIndex = (carouselIndex - 1 + carouselImages.length) % carouselImages.length;
+    updateCarousel();
+  });
+// change image every 8 secs
+  setInterval(() => {
+    carouselIndex = (carouselIndex + 1) % carouselImages.length;
+    updateCarousel();
+  }, 8000);
